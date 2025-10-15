@@ -14,7 +14,6 @@ router.post('/new', async (req, res) => {
     try{
         const employer = new model(req.body)
         await employer.save()
-        console.log('Nouvelle employer sauvegarder')
         res.end()
     }catch(err){
         console.error(`Echec lors de l'insertion de l'employer ${err}`)
