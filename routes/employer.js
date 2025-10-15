@@ -11,9 +11,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/new', async (req, res) => {
-    console.log('entrer')
     try{
-        console.log(req.body)
         const employer = new model(req.body)
         await employer.save()
         console.log('Nouvelle employer sauvegarder')
@@ -24,7 +22,6 @@ router.post('/new', async (req, res) => {
 })
 
 router.get('/employers', async (req, res) => {
-    console.log('recuperer tout les employé')
     try{
         const result = await model.find()
         res.json(result)
@@ -47,11 +44,9 @@ router.put('/update', async (req, res) => {
 })
 
 router.delete('/delete', async (req, res) => {
-    console.log('supprimer')
     try{
         // console.log(req.body.id)
         await model.findByIdAndDelete(req.body.id)
-        console.log('supprimer')
         res.end('Supprésion')
     }catch(err){
         console.error('Une erreur lors de la suppresion', err)

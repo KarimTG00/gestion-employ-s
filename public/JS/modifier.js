@@ -14,12 +14,9 @@ window.onload = () => {
     const poste = document.getElementById('poste')
     const montant = document.getElementById('number')
     const identifiant = params.get('id') || ''
-    console.log(identifiant)
 
     submit.addEventListener('click', async () => {
 
-        console.log('bonjour')
-        console.log(identifiant)
         const res = await fetch('http://localhost:4000/api/employer/update', {
             method: 'PUT',
             headers: {'content-type': 'application/json'},

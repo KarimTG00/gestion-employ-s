@@ -9,9 +9,6 @@ console.log('dans le js')
 
 btn.addEventListener('click', async (e) =>{
     e.preventDefault()
-
-    console.log('entrer dans le form.js')
-    console.log(nom.value, email.value, poste.value, montant.value)
     try{
         const res = await fetch('http://localhost:4000/api/employer/new', {
             method: 'POST',
@@ -27,9 +24,6 @@ btn.addEventListener('click', async (e) =>{
             const data = await res.text()
             return console.error('Une erreur : ', data)
         }
-
-        console.log('data envoyé')
-
         window.location.href = '/index.html'
 
     }catch(err){

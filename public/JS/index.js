@@ -16,12 +16,9 @@ window.onload = async () => {
         }
 
         const result = await res.json()
-        console.log(result)
 
         result.forEach(element => {
             try{
-                console.log('entrer')
-
                 div = document.createElement('div')
                 div2 = document.createElement('div')
                 div2.classList.add('div2')
@@ -93,8 +90,6 @@ window.onload = async () => {
                 })
 
                 btnSupprimer.addEventListener('click', async ()=>{
-                    console.log(element._id)
-
                     const res = await fetch('http://localhost:4000/api/employer/delete', {
                         method: 'DELETE',
                         headers:{'content-type':'application/json'},
